@@ -22,11 +22,21 @@ class ListingsController < ApplicationController
   end
 
   def edit
+    @listing = load_listing_from_url
+  end
+
+  def update
+    @listing = load_listing_from_url
+
+    if @listing.update(listing_params)
+      redirect_to user_listings_path
+    else
+      render :edit
+    end
   end
 
   def destroy
-    current_user = User.find(params[:user_id])
-    listing = current_user.listings.find(params[:id])
+    listing = load_listing_from_url
     listing.destroy
     redirect_to :back
   end
@@ -43,5 +53,9 @@ class ListingsController < ApplicationController
         :ends_on,
         :description
     )
+  end
+
+  def load_listing_from_url
+    current_user.listings.find(params[:id])
   end
 end

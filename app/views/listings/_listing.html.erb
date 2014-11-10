@@ -7,5 +7,8 @@
   <li>Ends on -- <%= listing.ends_on %></li>
   <li>Description -- <%= listing.description %></li>
 
-  <%= button_to "Delete", [listing.user, listing], method: :delete %>
+  <% if current_user.id == listing.user_id %>
+    <%= button_to "Delete", [listing.user, listing], method: :delete %>
+    <%= link_to "Edit", edit_user_listing_path(listing.user, listing) %>
+  <% end %>
 </div>

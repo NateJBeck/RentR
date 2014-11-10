@@ -24,6 +24,13 @@ class ListingsController < ApplicationController
   def edit
   end
 
+  def destroy
+    current_user = User.find(params[:user_id])
+    listing = current_user.listings.find(params[:id])
+    listing.destroy
+    redirect_to :back
+  end
+
   private
 
   def listing_params

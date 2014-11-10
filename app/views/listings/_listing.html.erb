@@ -6,4 +6,6 @@
   <li>Starts On -- <%= listing.starts_on %></li>
   <li>Ends on -- <%= listing.ends_on %></li>
   <li>Description -- <%= listing.description %></li>
+
+  <%= button_to "Delete", [listing.user, listing], method: :delete %>
 </div>

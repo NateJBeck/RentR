@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>RentR</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <%= link_to "HOME", root_path %>
+  <head>
+    <title>RentR</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= link_to "HOME", root_path %>
 
   <% if signed_in? %>
-      <%= link_to "Sign out", session_path, method: :delete %>
+    <%= link_to "Create a Listing", new_user_listing_path(current_user) %>
+    <%= link_to "My Listings", user_path(current_user) %>
+    <%= link_to "Sign out", session_path, method: :delete %>
+
     <% else %>
       <%= link_to "Sign in", new_session_path %>
       <%= link_to "Sign up", new_user_path %> 

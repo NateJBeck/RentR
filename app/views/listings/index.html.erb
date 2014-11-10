@@ -1,5 +1,20 @@
+<% if signed_in? %>
+  <%= link_to "Create a Listing", new_user_listing_path(current_user) %>
+  <%= link_to "My Listings", user_listings_path(current_user) %>
+<% end %>
+
 <h3>View all listings</h3>
 
-<% @listings.each do |listing| %>
-  <%= listing.price %>
-<% end %>
+<div>
+<ul>
+  <% @listings.each do |listing| %>
+    <strong><%= listing.title %></strong>
+    <li>Price -- <%= listing.price %></li>
+    <li>Location -- <%= listing.location %></li>
+    <li>Bedrooms -- <%= listing.bedrooms %></li>
+    <li>Starts On -- <%= listing.starts_on %></li>
+    <li>Ends on -- <%= listing.ends_on %></li>
+    <li>Description -- <%= listing.description %></li>
+  <% end %>
+</ul>
+</div>

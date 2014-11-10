@@ -1,0 +1,40 @@
+<%= form_for [listing.user, listing] do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div>
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div>
+    <%= form.label :bedrooms %>
+    <%= form.text_field :bedrooms %>
+  </div>
+
+  <div>
+    <%= form.label "Starts on (01-22-14)" %>
+    <%= form.date_field :starts_on %>
+  </div>
+ 
+  <div>
+    <%= form.label "Ends On (01-22-14)" %>
+    <%= form.date_field :ends_on %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <%= form.submit %>
+<% end %>
+
+

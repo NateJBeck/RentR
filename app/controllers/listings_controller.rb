@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
 
   def new
     @listing = current_user.listings.new
-    @listing.images = [Image.new, Image.new]
+    @listing.images = [Image.new, Image.new, Image.new]
   end
 
   def create
@@ -24,6 +24,11 @@ class ListingsController < ApplicationController
 
   def edit
     @listing = load_listing_from_url
+    number_of_images_left = Listing::NUMBER_OF_IMAGES - @listing.images.count
+
+    number_of_images_left.times do
+      @listing.images.build
+    end
   end
 
   def update
@@ -53,7 +58,7 @@ class ListingsController < ApplicationController
         :starts_on,
         :ends_on,
         :description,
-        images_attributes: [:url]
+        images_attributes: [:id, :url, :_destroy]
     )
   end
 

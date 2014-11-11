@@ -35,8 +35,10 @@
   </div>
 
   <%= form.fields_for :images do |image_attributes| %>
-    <%= image_attributes.label "Enter Image URL" %>
+    <%= image_attributes.label :url, "Enter Image URL" %>
     <%= image_attributes.text_field :url %>
+    <%= image_attributes.check_box :_destroy %>
+    <%= image_attributes.label :_destroy, "Remove Image" %><br>
   <% end %>
 
   <div>

@@ -8,12 +8,14 @@
   <li>Description -- <%= listing.description %></li>
   <ul>
     <% listing.images.each do |image| %>
-      <li>Some Pictures -- <%= image_tag image.url %></li>
+      <%= image_tag image.url, class: "listing" %>
     <% end %>
   </ul>
 
-  <% if current_user.id == listing.user_id %>
-    <%= button_to "Delete", [listing.user, listing], method: :delete %>
-    <%= link_to "Edit & Add Photos", edit_user_listing_path(listing.user, listing) %>
-  <% end %>
+  <% if signed_in? %>
+    <% if current_user.id == listing.user_id %>
+      <%= button_to "Delete", [listing.user, listing], method: :delete %>
+      <%= link_to "Edit & Add Photos", edit_user_listing_path(listing.user, listing) %>
+    <% end %>
+  <% end%>
 </div>

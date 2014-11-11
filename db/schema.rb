@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112142140) do
+ActiveRecord::Schema.define(version: 20141111221554) do
   enable_extension "plpgsql"
 
   create_table "booking_requests", force: true do |t|
@@ -55,6 +55,13 @@ ActiveRecord::Schema.define(version: 20141112142140) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "max_guest_number", default: 1
+  end
+
+  create_table "locations", force: true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

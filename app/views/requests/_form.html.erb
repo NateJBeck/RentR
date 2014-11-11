@@ -8,8 +8,8 @@
     <%= form.date_field :ends_on %>
   </div>
   <div>
-    <%= form.label "Guest Numbers" %>
-    <%= form.number_field :guest_number, in: 1..10, value: 1 %>
+    <%= form.label "Guest Numbers (max: #{listing.max_guest_number})" %>
+    <%= form.select :guest_number, options_for_select(1..listing.max_guest_number) %>
   </div>
   <div>
     <%= form.submit %>

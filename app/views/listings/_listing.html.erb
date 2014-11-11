@@ -15,12 +15,16 @@
   <% if signed_in? %>
     <% if current_user.id == listing.user_id %>
       <%= button_to "Delete", [listing.user, listing], method: :delete %>
-      <%= link_to "Edit & Add Photos", edit_user_listing_path(listing.user, listing) %>
+      <%= link_to "Edit & Add Photos", edit_user_listing_path(listing.user,
+                                                              listing) %>
+    <% else %>
+      <%= link_to "Request to Book", new_listing_request_path(listing) %>
     <% end %>
   <% end%>
 
   <% if current_user.likes?(listing) %>
-    <%= button_to "Unlike this listing", listing_like_path(listing), method: :delete %>
+    <%= button_to "Unlike this listing", listing_like_path(listing), 
+      method: :delete %>
   <% else %>
     <%= button_to "Like this listing", listing_like_path(listing) %>
   <% end %>

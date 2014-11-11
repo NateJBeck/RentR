@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_many :likes
   has_many :liked_listings, through: :likes, source: :listing
 
+  has_many :requests
+
   def likes?(listing)
     liked_listings.include?(listing)
   end

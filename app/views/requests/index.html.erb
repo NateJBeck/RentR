@@ -1,0 +1,10 @@
+<h3>View all my requests</h3>
+
+<ul>
+  <% @requests.each do |request| %>
+    <strong>Request to : <%= request.listing.title %></strong>
+    <li>Check In : <%= request.starts_on %></li>
+    <li>Check Out : <%= request.ends_on %></li>
+    <li>Guest Number : <%= request.guest_number %></li>
+  <% end %>
+</ul>

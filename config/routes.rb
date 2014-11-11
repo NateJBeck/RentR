@@ -7,7 +7,10 @@ Rails.application.routes.draw do
 
   resources :listings, only: [:index, :show] do
     resource :like, only: [:create, :destroy]
+    resources :requests, only: [:new, :create]
   end
+
+  resources :requests, only: [:index]
 
   root "listings#index"
 end

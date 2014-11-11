@@ -1,0 +1,17 @@
+<%= form_for [listing, request] do |form| %>
+  <div>
+    <%= form.label "Check In" %>
+    <%= form.date_field :starts_on %>
+  </div>
+  <div>
+    <%= form.label "Check Out" %>
+    <%= form.date_field :ends_on %>
+  </div>
+  <div>
+    <%= form.label "Guest Numbers" %>
+    <%= form.number_field :guest_number, in: 1..10, value: 1 %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

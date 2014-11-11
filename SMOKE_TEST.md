@@ -17,3 +17,10 @@ page.
 page.
 * If user clicks on "Delete" and submit, it should redirect to user listings
 page.
+
+
+###Scenario 3: Request model
+* If user clicks on "Request to Book" on listing show page and submit, it should
+redirect to listing show page.
+* If user clicks on "My Requests" on home page, it should redirect to requests
+index page to show my all requests.

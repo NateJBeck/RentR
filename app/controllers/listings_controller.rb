@@ -5,6 +5,7 @@ class ListingsController < ApplicationController
 
   def new
     @listing = current_user.listings.new
+    @listing.images = [Image.new, Image.new]
   end
 
   def create
@@ -51,7 +52,8 @@ class ListingsController < ApplicationController
         :bedrooms,
         :starts_on,
         :ends_on,
-        :description
+        :description,
+        images_attributes: [:url]
     )
   end
 

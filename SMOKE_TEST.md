@@ -21,5 +21,5 @@ page.
 ###Scenario 3: Request model
 * If user clicks on "Request to Book" on listing show page and submit, it should
 redirect to listing show page.
-* If user clicks on "My Requests" on home page, it should redirect to requests
-index page to show my all requests.
+* If user clicks on "Requests" on home page, it should redirect to requests
+index page to show my all requests from and to current user.

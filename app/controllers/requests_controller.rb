@@ -1,6 +1,7 @@
 class RequestsController < ApplicationController
   def index
-    @requests = Request.all
+    @requests_from_me = requests_from_me
+    @requests_to_me = requests_to_me
   end
 
   def new
@@ -30,5 +31,15 @@ class RequestsController < ApplicationController
       require(:request).
       permit(:starts_on, :ends_on, :guest_number, :user_id).
       merge(listing_id: listing.id)
+  end
+
+  def requests_from_me
+    current_user.requests
+  end
+
+  def requests_to_me
+    Request.all.select do |request|
+      request.listing.user == current_user
+    end
   end
 end

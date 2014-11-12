@@ -1,0 +1,6 @@
+<% requests_from_me.each do |request| %>
+  <strong>Request to :
+    <%= link_to request.listing.title, request.listing %>
+  </strong>
+  <%= render request %>
+<% end %>

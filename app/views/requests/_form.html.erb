@@ -9,7 +9,8 @@
   </div>
   <div>
     <%= form.label "Guest Numbers (max: #{listing.max_guest_number})" %>
-    <%= form.select :guest_number, options_for_select(1..listing.max_guest_number) %>
+    <%= form.select :guest_number,
+      options_for_select(1..listing.max_guest_number) %>
   </div>
   <div>
     <%= form.submit %>

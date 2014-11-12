@@ -16,7 +16,12 @@
 
   <div>
     <%= form.label :bedrooms %>
-    <%= form.text_field :bedrooms %>
+    <%= form.select :bedrooms, options_for_select(1..20) %>
+  </div>
+
+  <div>
+    <%= form.label :max_guest_number %>
+    <%= form.select :max_guest_number, options_for_select(1..20) %>
   </div>
 
   <div>

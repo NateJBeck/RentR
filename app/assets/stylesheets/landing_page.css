@@ -1,11 +1,33 @@
+.top-image-holder {
+  height: 440px;
+  width: 100%;
+  background-color: #e5e4e2;
+  /* background-size: 100% 100%; */
+  /* background-image: url("http://www.responsiveinboundmarketing.com/hs-fs/hub/389011/file-1177430948-jpg/835bb25f8df8abb0f512d173baed5c0f.jpg") */
+  /*  */
+}
+
+.top-image-holder h3 {
+  font-family: 'PT Sans', sans-serif;
+  position: absolute;
+  color: black;
+}
+
+.top-nav-buttons a{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 84%;
+  float: right;
+  padding: 25px 50px 25px 10px;
+  text-decoration: none;
+}
+
 .location-container {
-  width: 80%;
+  width: 75%;
   border: 1px solid black;
   margin: 0 auto;
 }
 
 .location {
-  height: 250px;
-  width: 300px;
-  float: right;
+  width: 25%;
+  height: 200px;
 }

@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     resources :listings, only: [:index, :new, :create, :destroy, :update, :edit]
   end
 
-  resources :listings, only: [:index, :show]
+  resources :listings, only: [:index, :show] do
+    resource :like, only: [:create, :destroy]
+  end
 
   root "listings#index"
 end

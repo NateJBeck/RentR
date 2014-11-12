@@ -9,10 +9,7 @@
     <%= form.text_field :price %>
   </div>
 
-  <div>
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
+  <%= form.collection_select :location, Location.all, :id, :name, {:prompt => "Select Location"} %>
 
   <div>
     <%= form.label :bedrooms %>

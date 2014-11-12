@@ -5,6 +5,7 @@ class LocationsController < ApplicationController
 
   def show
     @location = find_location_from_url
+    @listings = Listing.where(location: "#{ @location.id }")
   end
 
   private

@@ -1,6 +1,5 @@
-<div class="top-image-holder">
-<h3>Find Your Home away from Home</h3>
-  <div class="top-nav-buttons">
+<div class="landing-top-image">
+  <div class="nav-buttons">
     <%= link_to "HOME", root_path %>
 
     <% if signed_in? %>
@@ -13,12 +12,17 @@
       <%= link_to "Sign up", new_user_path %> 
     <% end %>
   </div>
+  <div class="underspan"></div>
 </div>
 
-<div class="location-container">
-  <ul>
-    <%= render @locations %>
-  </ul>
+<div class="for-the-weekend">
+  Just for the Weekend
+  <div class="small-weekend">
+    Discover new places close to home
+  </div>
 </div>
 
-
+<div class="locations-container">
+  <br>
+  <%= render @locations %>
+</div>

@@ -5,6 +5,7 @@ gem 'flutie'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'monban-generators'
+gem 'neat'
 gem 'pg'
 gem 'pry'
 gem 'rails_12factor', group: :production

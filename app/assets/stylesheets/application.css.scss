@@ -1,0 +1,19 @@
+@import "bourbon";
+@import "neat";
+
+@import "landing_page";
+@import "listing";
+@import "location";
+
+body {
+  background-color: #E3E3E1;
+  font-family: 'PT Sans', sans-serif;
+}
+
+#container {
+  @include outer-container;
+  border: 1px solid blue;
+}
+
+// Must require things manually as you make various pages
+// @import is the sass equivalent of 'require' in ruby

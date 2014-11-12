@@ -1,3 +1,31 @@
-<h1>The <%= @location.name %> Page<h1>
+<div class="top-nav-container">navnav
+  <div class="nav-buttons"></div>
+</div>
 
-<%= render @listings %>
+<div class="top-image-span"></div>
+
+<div class="smaller-location-container">
+  <div class="location-show-title"> 
+    <%= @location.name %>
+  </div>
+
+  <div class="location-show-info-container">
+    <div class="location-show-image">
+      <%= image_tag @location.url %>
+    </div>
+
+    <div class="location-show-side-info">
+      Why visit <%= @location.name %>?
+      <div class="location-show-more-info">
+        <%= @location.info %>
+      </div>
+      <div class="location-show-map"></div>
+    </div>
+  </div>
+
+  <div>
+    <ul>
+      <%= render @listings %>
+    </ul>
+  </div>
+</div>

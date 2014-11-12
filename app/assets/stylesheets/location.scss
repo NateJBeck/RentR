@@ -1,0 +1,46 @@
+.top-nav-container {
+  border: 1px solid black;
+  height: 2em;
+}
+
+.top-image-span {
+  height: 10em;
+  border: 1px solid black;
+}
+
+.smaller-location-container {
+  @include span-columns(9);
+  @include shift(1.5);
+
+  margin-top: 2em;
+  height: 35em;
+
+  .location-show-title {
+    font-size: 150%;
+  }
+
+  .location-show-info-container {
+    .location-show-image {
+      img {
+        padding-right: 3em;
+        @include span-columns(8);
+        height: 20em;
+      }
+    }
+
+    .location-show-side-info {
+      @include span-columns(4);
+      font-size: 130%;
+
+      .location-show-more-info {
+        font-size: 80%;
+      }
+
+      .location-show-map {
+        margin-top: 5em;
+        height: 8em;
+        border: 1px solid black;
+      }
+    }
+  }
+}

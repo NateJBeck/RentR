@@ -1,0 +1,11 @@
+.location-container {
+  width: 80%;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.location {
+  height: 250px;
+  width: 300px;
+  float: right;
+}

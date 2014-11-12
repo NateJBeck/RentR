@@ -13,5 +13,7 @@ Rails.application.routes.draw do
 
   resources :booking_requests, only: [:index]
 
-  root "listings#index"
+  resources :locations, only: [:index, :show]
+
+  root "locations#index"
 end

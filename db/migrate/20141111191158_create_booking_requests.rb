@@ -1,6 +1,6 @@
-class CreateRequests < ActiveRecord::Migration
+class CreateBookingRequests < ActiveRecord::Migration
   def change
-    create_table :requests do |t|
+    create_table :booking_requests do |t|
       t.date :starts_on
       t.date :ends_on
       t.integer :guest_number

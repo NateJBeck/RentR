@@ -14,6 +14,16 @@
 ActiveRecord::Schema.define(version: 20141112142140) do
   enable_extension "plpgsql"
 
+  create_table "booking_requests", force: true do |t|
+    t.date     "starts_on"
+    t.date     "ends_on"
+    t.integer  "guest_number"
+    t.integer  "listing_id",   null: false
+    t.integer  "user_id",      null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "images", force: true do |t|
     t.string   "url"
     t.text     "title"
@@ -45,16 +55,6 @@ ActiveRecord::Schema.define(version: 20141112142140) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "max_guest_number", default: 1
-  end
-
-  create_table "requests", force: true do |t|
-    t.date     "starts_on"
-    t.date     "ends_on"
-    t.integer  "guest_number"
-    t.integer  "listing_id",   null: false
-    t.integer  "user_id",      null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: true do |t|

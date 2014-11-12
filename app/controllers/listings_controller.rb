@@ -55,6 +55,7 @@ class ListingsController < ApplicationController
         :price,
         :location,
         :bedrooms,
+        :max_guest_number,
         :starts_on,
         :ends_on,
         :description,

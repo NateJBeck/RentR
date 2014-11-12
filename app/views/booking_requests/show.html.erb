@@ -1,0 +1,5 @@
+<%= render @booking_request %>
+
+<%= link_to "Edit", edit_listing_booking_request_path(@listing, @booking_request) %>
+
+<%= button_to "Delete", [@listing, @booking_request], method: :delete %>

@@ -1,0 +1,13 @@
+<h3>View all requests from me</h3>
+
+<ul>
+  <%= render collection: @booking_requests_from_me,
+    partial: "booking_requests/booking_request_from_me" %>
+</ul>
+
+<h3>View all requests to me</h3>
+
+<ul>
+  <%= render collection: @booking_requests_to_me,
+    partial: "booking_requests/booking_request_to_me" %>
+</ul>

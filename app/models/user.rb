@@ -3,11 +3,9 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true
 
   has_many :listings, dependent: :destroy
-
   has_many :likes
   has_many :liked_listings, through: :likes, source: :listing
-
-  has_many :requests
+  has_many :booking_requests
 
   def likes?(listing)
     liked_listings.include?(listing)

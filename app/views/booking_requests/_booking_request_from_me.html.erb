@@ -1,0 +1,8 @@
+<strong>
+  <%= link_to "Request",
+    [booking_request_from_me.listing, booking_request_from_me] %> to :
+    <%= link_to booking_request_from_me.listing.title,
+    booking_request_from_me.listing %>
+</strong>
+
+<%= render booking_request_from_me %>

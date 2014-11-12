@@ -4,7 +4,7 @@
   <li>Location -- <%= listing.location %></li>
   <li>Bedrooms -- <%= listing.bedrooms %></li>
   <li>Maximum Guest Number -- <%= listing.max_guest_number %></li>
-  <li>Starts On -- <%= listing.starts_on %></li>
+  <li>Starts on -- <%= listing.starts_on %></li>
   <li>Ends on -- <%= listing.ends_on %></li>
   <li>Description -- <%= listing.description %></li>
   <ul>
@@ -19,7 +19,7 @@
       <%= link_to "Edit & Add Photos", edit_user_listing_path(listing.user,
                                                               listing) %>
     <% else %>
-      <%= link_to "Request to Book", new_listing_request_path(listing) %>
+      <%= link_to "Request to Book", new_listing_booking_request_path(listing) %>
     <% end %>
   <% end%>
 

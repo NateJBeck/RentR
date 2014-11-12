@@ -1,4 +1,8 @@
 class LikesController < ApplicationController
+  def index
+    @listings = current_user.liked_listings
+  end
+
   def create
     listing = load_listing_from_url
     listing.likes.create(user_id: current_user.id)

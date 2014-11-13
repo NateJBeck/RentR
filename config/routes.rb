@@ -5,9 +5,10 @@ Rails.application.routes.draw do
     resources :listings, only: [:index, :new, :create, :destroy, :update, :edit]
   end
 
+  resources :likes, only: [:index]
+
   resources :listings, only: [:index, :show] do
     resource :like, only: [:create, :destroy]
-    resources :likes, only: [:index]
     resources :booking_requests, only: [:new, :create, :show,
                                         :edit, :update, :destroy]
   end

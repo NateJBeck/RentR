@@ -22,7 +22,6 @@
     <% else %>
       <%= link_to "Request to Book", new_listing_booking_request_path(listing) %>
     <% end %>
-  <% end%>
 
   <% if current_user.likes?(listing) %>
     <%= button_to "Unlike this listing", listing_like_path(listing), 
@@ -30,4 +29,5 @@
   <% else %>
     <%= button_to "Like this listing", listing_like_path(listing) %>
   <% end %>
+<% end %>
 </div>

@@ -9,8 +9,8 @@
   height: 400px;
 
   .nav-buttons {
-    @include shift(7);
-    @include span-columns(5);
+    @include shift(5);
+    @include span-columns(7);
 
     font-family: 'PT Sans', sans-serif;
     font-size: 120%;

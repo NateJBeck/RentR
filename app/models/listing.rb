@@ -1,14 +1,15 @@
 class Listing < ActiveRecord::Base
   NUMBER_OF_IMAGES = 3
 
-  validates :title, presence: true
-  validates :price, presence: true
-  validates :location, presence: true
+  validates :address, presence: true
   validates :bedrooms, presence: true
-  validates :max_guest_number, presence: true
-  validates :starts_on, presence: true
-  validates :ends_on, presence: true
   validates :description, presence: true
+  validates :ends_on, presence: true
+  validates :location, presence: true
+  validates :max_guest_number, presence: true
+  validates :price, presence: true
+  validates :starts_on, presence: true
+  validates :title, presence: true
 
   belongs_to :user
 

@@ -60,6 +60,7 @@ class ListingsController < ApplicationController
         :starts_on,
         :ends_on,
         :description,
+        :address,
         images_attributes: [:id, :url, :_destroy]
     )
   end

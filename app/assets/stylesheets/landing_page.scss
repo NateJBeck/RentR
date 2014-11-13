@@ -1,9 +1,7 @@
 .landing-top-image {
   @include span-columns(12);
 
-  background-color: #e5e4e2;
-  background-image:
-  url("http://img-fotki.yandex.ru/get/9114/226260384.1d/0_fd501_3b8d4b42_orig");
+  background-image: url("http://img-fotki.yandex.ru/get/9114/226260384.1d/0_fd501_3b8d4b42_orig");
   background-size: 100% 100%;
   border: 1px solid black;
   height: 400px;
@@ -52,6 +50,7 @@
 .locations-container {
   @include span-columns(8);
   @include shift(2);
+  border: 2px solid red;
 
   .each-location {
     @include span-columns(4);

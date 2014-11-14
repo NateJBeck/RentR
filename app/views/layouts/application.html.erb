@@ -18,8 +18,8 @@
       <%= link_to "Create a Listing", new_user_listing_path(current_user) %>
       <%= link_to "My Listings", user_path(current_user) %>
       <%= link_to "Requests", booking_requests_path %>
-      <%= link_to "Sign out", session_path, method: :delete %>
       <%= link_to "Favorite Listings", likes_path %>
+      <%= link_to "Sign out", session_path, method: :delete %>
     <% else %>
       <%= link_to "Sign in", new_session_path %>
       <%= link_to "Sign up", new_user_path %> 

@@ -35,9 +35,9 @@
       <% else %>
         <%= link_to "Request to Book", new_listing_booking_request_path(listing) %>
         <% if current_user.likes?(listing) %>
-          <%= button_to "Unlike this listing", listing_like_path(listing), method: delete %>
+          <%= button_to "Unlike this listing", listing_like_path(listing), method: :delete %>
         <% else %>
-          <% button_to "Like this listing", listing_like_path(listing) %>
+          <%= button_to "Like this listing", listing_like_path(listing) %>
         <% end %>
       <% end %>
     <% end %>

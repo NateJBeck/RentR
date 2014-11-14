@@ -1,8 +1,5 @@
-<div class="each-location">
-  <%= link_to location_path(location) do %>
-    <div class="location-name">
-      <%= location.name %>
-    </div>
-    <%= image_tag location.url, class: "location-image" %>
-  <% end %>
-</div>
+<a href="<%= location_path(location) %>" class="grid-item">
+  <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" alt="">
+  <h1><%= location.name %></h1>
+  <p><%= location.info %></p>
+</a>

@@ -1,34 +1,44 @@
-<div>
-  <strong><%= link_to listing.title, listing_path(listing) %></strong>
-  hello
-  <li>Price -- <%= listing.price %></li>
-  <li>Location -- <%= listing.location %></li>
-  <li class="address"><%= listing.address %></li>
-  <li>Bedrooms -- <%= listing.bedrooms %></li>
-  <li>Maximum Guest Number -- <%= listing.max_guest_number %></li>
-  <li>Starts on -- <%= listing.starts_on %></li>
-  <li>Ends on -- <%= listing.ends_on %></li>
-  <li>Description -- <%= listing.description %></li>
-  <ul>
-    <% listing.images.each do |image| %>
-      <%= image_tag image.url, class: "listing" %>
-    <% end %>
-  </ul>
+<div class="card">
+  <div class="ribbon-wrapper">
+    <div class="ribbon">WOW
+    </div>
+  </div>
 
-  <% if signed_in? %>
-    <% if current_user.id == listing.user_id %>
-      <%= button_to "Delete", [listing.user, listing], method: :delete %>
-      <%= link_to "Edit & Add Photos", edit_user_listing_path(listing.user,
-                                                              listing) %>
-    <% else %>
-      <%= link_to "Request to Book", new_listing_booking_request_path(listing) %>
+  <div class="card-image">
+    <img src="<%= listing.images.first.url %>" alt="">
+  </div>
+
+  <div class="card-header">
+    <%= listing.title %>
+  </div>
+
+  <div class="card-copy">
+    <p><%= listing.description %></p>
+  </div>
+
+  <div class="card-stats">
+    <ul>
+      <li>$<%= listing.price %><span>Per Night</span></li>
+      <li><%= listing.bedrooms %><span>Beds</span></li>
+      <li><%= listing.max_guest_number %><span>Max Guests</span></li>
+      <li><%= listing.likes.count %><span>Likes</span></li>
+      <li class="listing-address" ><%= listing.address %></li>
+    </ul>
+
+    <% if signed_in? %>
+      <% if current_user.id == listing.user_id %>
+        <br><br><h5>I own this listing</h5>
+        <%= link_to "Edit / Add Photos", edit_user_listing_path(listing.user, listing) %>
+        <%= button_to "Delete Listing", [listing.user, listing], method: :delete %>
+      <% else %>
+        <%= link_to "Request to Book", new_listing_booking_request_path(listing) %>
+        <% if current_user.likes?(listing) %>
+          <%= button_to "Unlike this listing", listing_like_path(listing), method: delete %>
+        <% else %>
+          <% button_to "Like this listing", listing_like_path(listing) %>
+        <% end %>
+      <% end %>
     <% end %>
 
-  <% if current_user.likes?(listing) %>
-    <%= button_to "Unlike this listing", listing_like_path(listing), 
-      method: :delete %>
-  <% else %>
-    <%= button_to "Like this listing", listing_like_path(listing) %>
-  <% end %>
-<% end %>
-</div>
+  </div>
+  </div>

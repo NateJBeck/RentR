@@ -1,32 +1,29 @@
-<div class="top-nav-container">navnav
-  <div class="nav-buttons"></div>
+<div class="top-nav-container">
+  <div class="nav-buttons">
+    <%= link_to "HOME", root_path %>
+
+    <% if signed_in? %>
+      <%= link_to "Create a Listing", new_user_listing_path(current_user) %>
+      <%= link_to "My Listings", user_path(current_user) %>
+      <%= link_to "Requests", booking_requests_path %>
+      <%= link_to "Sign out", session_path, method: :delete %>
+      <%= link_to "Favorite Listings", likes_path %>
+    <% else %>
+      <%= link_to "Sign in", new_session_path %>
+      <%= link_to "Sign up", new_user_path %> 
+    <% end %>
+  </div>
 </div>
 
-<div class="top-image-span"></div>
+<%= image_tag @location.url, class: "top-image-span" %>
+<div class="location-show-title"><%= @location.name %></div>
 
-<div class="smaller-location-container">
-  <div class="location-show-title"> 
-    <%= @location.name %>
-  </div>
+<div id="map_wrapper">
+  <div id="map_canvas"></div>
+</div>
 
-  <div class="location-show-info-container">
-
-    <div id="map_wrapper">
-      <div id="map_canvas"></div>
-    </div>
-
-    <div class="location-show-side-info">
-      Why visit <%= @location.name %>?
-      <div class="location-show-more-info">
-        <%= @location.info %>
-      </div>
-      <div class="location-show-map"></div>
-    </div>
-  </div>
-
-  <div>
-    <ul>
-      <%= render @listings %>
-    </ul>
+<div class="location-show-listings-area">
+  <div class="cards">
+    <%= render @listings %>
   </div>
 </div>

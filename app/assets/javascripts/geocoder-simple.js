@@ -14,7 +14,7 @@ function createMap(){
 }
 
 function addLocations() {
-  $.each($(".address"), function(i, address) {
+  $.each($(".listing-address"), function(i, address) {
     geocodeAndAddMarker($(address).text());
   });
 };

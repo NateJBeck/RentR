@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bitters'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'flutie'
 gem 'jbuilder', '~> 2.0'

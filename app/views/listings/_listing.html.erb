@@ -8,7 +8,7 @@
     <img src="<%= listing.images.first.url %>" alt="">
   </div>
 
-  <div class="card-header">
+  <div class="card-header listing-title">
     <%= listing.title %>
   </div>
 
@@ -16,7 +16,7 @@
     <p><%= listing.description %></p>
   </div>
 
-  <div class="card-stats">
+  <div class="card-stats listing-info">
     <ul>
       <li>$<%= listing.price %><span>Per Night</span></li>
       <li><%= listing.bedrooms %><span>Beds</span></li>
@@ -39,6 +39,5 @@
         <% end %>
       <% end %>
     <% end %>
-
   </div>
-  </div>
+</div>

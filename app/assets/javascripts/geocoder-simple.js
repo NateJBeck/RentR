@@ -2,7 +2,7 @@ $(initialize);
 
 function initialize(){
   createMap();
-  addLocations();
+  drawMap();
 }
 
 function createMap(){
@@ -10,24 +10,35 @@ function createMap(){
     zoom: 12,
   };
 
-  window.map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+  window.map = new google.maps.Map($("#map_canvas")[0], mapOptions);
   window.mapBound = new google.maps.LatLngBounds();
 }
 
-function addLocations() {
-  $.each($(".listing-address"), function(i, address) {
-    geocodeAndAddMarker($(address).text());
+function drawMap() {
+  $.each($(".listing-info"), function(i, listing) {
+    var listingInfo = $(listing);
+    var listingTitle = listingInfo.find(".listing-title").html()
+    var listingAddress = listingInfo.find(".listing-address").html()
+
+    geocodeAndAddMarker(listingTitle, listingAddress);
   });
 };
 
-function geocodeAndAddMarker(address){
+function geocodeAndAddMarker(title, address){
   var geocoder = new google.maps.Geocoder();
   geocoder.geocode( { 'address': address }, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       var result_location = results[0].geometry.location;
       var marker = new google.maps.Marker({
         map: window.map,
-        position: result_location
+        position: result_location,
+      });
+      var infowindow = new google.maps.InfoWindow({
+        content: title
+      });
+
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map, marker);
       });
 
       setBounds(result_location)

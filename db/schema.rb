@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20141113210646) do
   create_table "listings", force: true do |t|
     t.string   "title"
     t.integer  "price"
+    t.string   "location"
     t.integer  "bedrooms"
     t.date     "starts_on"
     t.date     "ends_on"
@@ -56,7 +57,6 @@ ActiveRecord::Schema.define(version: 20141113210646) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "max_guest_number", default: 1
-    t.string   "location"
     t.string   "address"
   end
 

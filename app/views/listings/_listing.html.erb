@@ -5,7 +5,9 @@
   </div>
 
   <div class="card-image">
-    <img src="<%= listing.images.first.url %>" alt="">
+    <% if listing.images.count > 0 %>
+      <img src="<%= listing.images.first.url %>" alt="">
+    <% end %>
   </div>
 
   <div class="card-header listing-title">

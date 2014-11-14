@@ -15,9 +15,9 @@ function createMap(){
 }
 
 function drawMap() {
-  $.each($(".listing-info"), function(i, listing) {
-    var listingInfo = $(listing);
-    var listingTitle = listingInfo.find(".listing-title").html()
+  $.each($(".card"), function(i, card) {
+    var listingTitle = $(card).find(".listing-title").html();
+    var listingInfo = $(card).find(".listing-info");
     var listingAddress = listingInfo.find(".listing-address").html()
 
     geocodeAndAddMarker(listingTitle, listingAddress);
